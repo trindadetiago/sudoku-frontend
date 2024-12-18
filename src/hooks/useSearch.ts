@@ -17,7 +17,7 @@ const useSearch = () => {
       setData(result); // Store the results
       return result;
     } catch (err) {
-      setError('Failed to fetch search results.');
+      setError('Erro ao buscar dados. Tente novamente.');
       return null;
     } finally {
       setLoading(false);
