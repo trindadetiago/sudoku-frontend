@@ -137,7 +137,7 @@ const SudokuGame: React.FC = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gray-100 dark:bg-zinc-900">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md dark:bg-zinc-950">
+      <Card className="bg-white p-6 rounded-lg w-full max-w-md dark:bg-zinc-950">
         <div className="flex flex-row items-center justify-between align-middle mb-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -164,7 +164,7 @@ const SudokuGame: React.FC = () => {
           </DropdownMenu>
           
         
-        {(searchResponse && solutionBoard) && (
+        {solutionBoard && (
           <Switch
             checked={showResults}
             onCheckedChange={() => setShowResults(prev => !prev)}
@@ -242,7 +242,7 @@ const SudokuGame: React.FC = () => {
 
         {loading && <p className="mt-4 text-center">Carregando...</p>}
         {error && <p className="mt-4 text-center text-red-500">{error}</p>}
-        </div>
+        </Card>
 
         {searchResponse && (
           <>

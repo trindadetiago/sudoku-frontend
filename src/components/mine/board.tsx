@@ -23,8 +23,10 @@ const OriginalStyle: React.FC<BoardProps> = ({ board, solutionBoard, handleCellC
           onKeyDown={(e) => handleKeyPress(e, rowIndex, colIndex)}
           tabIndex={0}
         >
-          {cell !== 0 ? (
-            <span className={`text-xl font-semibold ${solutionBoard && solutionBoard[rowIndex][colIndex] !== cell ? 'text-green-600 dark:text-green-400' : ''}`}>{cell}</span>
+          {solutionBoard && solutionBoard[rowIndex][colIndex] !== cell ? (
+            <span className="text-xl font-semibold text-green-600 dark:text-green-700">{solutionBoard[rowIndex][colIndex]}</span>
+          ) : cell !== 0 ? (
+            <span className="text-xl font-semibold text-black dark:text-white">{cell}</span>
           ) : (
             <span className="text-xl font-semibold text-zinc-200 dark:text-zinc-500">0</span>
           )}
@@ -48,8 +50,10 @@ const GroupedStyle: React.FC<BoardProps> = ({ board, solutionBoard, handleCellCl
             onKeyDown={(e) => handleKeyPress(e, rowIndex, colIndex)}
             tabIndex={0}
           >
-            {cell !== 0 ? (
-              <span className={`text-xl font-semibold ${solutionBoard && solutionBoard[rowIndex][colIndex] !== cell ? 'text-green-600 dark:text-green-400' : ''}`}>{cell}</span>
+            {solutionBoard && solutionBoard[rowIndex][colIndex] !== cell ? (
+              <span className="text-xl font-semibold text-green-600 dark:text-green-700">{solutionBoard[rowIndex][colIndex]}</span>
+            ) : cell !== 0 ? (
+              <span className="text-xl font-semibold text-black dark:text-white">{cell}</span>
             ) : (
               <span className="text-xl font-semibold text-zinc-200 dark:text-zinc-500">0</span>
             )}
@@ -73,8 +77,10 @@ const CoolStyle: React.FC<BoardProps> = ({ board, solutionBoard, handleCellClick
           onKeyDown={(e) => handleKeyPress(e, rowIndex, colIndex)}
           tabIndex={0}
         >
-          {cell !== 0 ? (
-            <span className={`text-xl font-semibold ${solutionBoard && solutionBoard[rowIndex][colIndex] !== cell ? 'text-green-300 dark:text-green-200' : 'text-white'}`}>{cell}</span>
+          {solutionBoard && solutionBoard[rowIndex][colIndex] !== cell ? (
+            <span className="text-xl font-semibold text-green-300 dark:text-green-700">{solutionBoard[rowIndex][colIndex]}</span>
+          ) : cell !== 0 ? (
+            <span className="text-xl font-semibold text-white">{cell}</span>
           ) : (
             <span className="text-xl font-semibold text-zinc-300 dark:text-zinc-500">0</span>
           )}
